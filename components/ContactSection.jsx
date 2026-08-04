@@ -32,7 +32,7 @@ export default function ContactSection() {
   };
 
   return (
-    <footer className="p-8 md:p-16 bg-carbon text-vanilla relative crt-scanlines overflow-hidden">
+    <footer id="contact" className="p-8 md:p-16 bg-carbon text-vanilla relative crt-scanlines overflow-hidden">
       {/* Ambient Gradient Mesh Background */}
       <div
         ref={bgMeshRef}

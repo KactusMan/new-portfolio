@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Link from "next/link";
-import { Coffee, Sparkles, ExternalLink } from "lucide-react";
+import { Coffee, Sparkles, ExternalLink, ArrowDownRight } from "lucide-react";
 
 const ASCII_EMOJIS = ["(⌐■_■)", "(° o °)", "(◔_◔)", "╦(ò_ó)╤", "(⚙_⚙)", "(⌐‿⌐)"];
 
@@ -55,6 +55,8 @@ export default function HeroKinetic() {
         </div>
 
         <div className="flex items-center gap-3 font-mono text-xs flex-wrap">
+          <a href="#websites" className="hidden items-center gap-1.5 border border-lavender/40 px-3 py-1.5 text-lavender transition-colors hover:border-lime hover:text-lime md:flex">WORK <ArrowDownRight className="h-3.5 w-3.5" /></a>
+          <a href="#contact" className="hidden border border-lavender/40 px-3 py-1.5 text-lavender transition-colors hover:border-candyBlue hover:text-candyBlue md:block">CONTACT</a>
           <span className="bg-tealGreen text-lightLime px-3 py-1.5 rounded-full border border-lightLime/20 flex items-center gap-1.5"><Coffee className="w-3.5 h-3.5 text-lime animate-bounce" /> 4+ YEARS IN THE TRENCHES (CMS & FRONTEND)</span>
           <span className="bg-cosmic text-candyBlue px-3 py-1.5 rounded-full border border-candyBlue/30">RUNNING ON COFFEE & CLEAN CODE ☕</span>
           <Link href="/playground" className="flex items-center gap-1.5 bg-lime text-onyx font-bold px-3.5 py-1.5 rounded-full border border-onyx hover:bg-candyBlue hover:scale-105 transition-all shadow-[3px_3px_0px_#020202]"><Sparkles className="w-3.5 h-3.5" /> PLAYGROUND <ExternalLink className="w-3 h-3" /></Link>
@@ -70,7 +72,8 @@ export default function HeroKinetic() {
             </span>
             <span className="hero-line block">ARCHITECT.</span>
           </h1>
-          <p className="hero-line mt-6 text-base md:text-lg text-lavender max-w-2xl font-body leading-relaxed">Engineering high-performance headless CMS storefronts, custom WordPress architectures, liquid Shopify systems, and React/Next.js applications.</p>
+          <p className="hero-line mt-6 text-base md:text-lg text-lavender max-w-2xl font-body leading-relaxed">I build useful web systems with a little bit of mischief: headless storefronts, custom WordPress engines, liquid Shopify systems, and React/Next.js applications.</p>
+          <a href="#websites" className="hero-line mt-7 inline-flex items-center gap-3 rounded-full bg-lime px-5 py-3 font-mono text-xs font-bold text-onyx shadow-[4px_4px_0px_#82D5E5] transition-transform hover:-translate-y-1">SEE THE SITE ARCHIVE <ArrowDownRight className="h-4 w-4" /></a>
         </div>
 
         <div className="hero-line flex-shrink-0 w-full lg:w-[440px]">
