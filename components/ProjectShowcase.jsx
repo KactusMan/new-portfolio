@@ -2,7 +2,7 @@
 import { useState } from "react";
 import QuirkyModal from "./QuirkyModal";
 import { motion } from "framer-motion";
-import { ExternalLink, Code2, Layers, Cpu, CheckCircle } from "lucide-react";
+import { Code2, Layers, CheckCircle, ClipboardList, Gauge } from "lucide-react";
 
 const PROJECTS = [
   {
@@ -11,6 +11,8 @@ const PROJECTS = [
     category: "Shopify + Next.js + Liquid",
     badge: "bg-lime text-onyx",
     tagline: "Ultra-fast headless commerce with custom GraphQL Storefront API integrations and custom Liquid components.",
+    scope: "A decoupled storefront where Next.js owns the customer experience while Shopify remains a dependable commerce back office.",
+    delivery: ["Product and collection querying with defensive API error handling", "Cart, variant and merchandising behaviour designed for real editors", "Performance-minded UI with progressive enhancement for interactions"],
     archHighlights: [
       "Next.js App Router with Shopify Storefront API via GraphQL",
       "Bespoke Liquid section fallbacks for client CMS editing",
@@ -40,6 +42,8 @@ const GET_PRODUCTS = \`
     category: "WordPress + ACF Pro + PHP",
     badge: "bg-candyBlue text-onyx",
     tagline: "Custom WordPress theme system built with Advanced Custom Fields Pro, REST APIs, and tailored AJAX workflows.",
+    scope: "A maintainable editorial platform with a deliberately small admin surface: editors get flexible blocks, developers keep predictable templates.",
+    delivery: ["ACF Flexible Content modules versioned in JSON", "Custom REST endpoints shaped for the frontend rather than raw WP data", "Reusable PHP patterns with sane permissions and cache-friendly responses"],
     archHighlights: [
       "Custom PHP theme architecture avoiding bloated page builders",
       "Dynamic ACF Flexible Content blocks with automated JSON field syncing",
@@ -60,6 +64,8 @@ add_action('rest_api_init', function () {
     category: "Webflow + GSAP + Custom JS",
     badge: "bg-lavender text-onyx",
     tagline: "High-impact Webflow site infused with custom GSAP scroll triggers, kinetic SVG paths, and custom Webflow CMS logic.",
+    scope: "A visual-first launch site that keeps Webflow friendly for content updates while custom code handles the moments the platform cannot.",
+    delivery: ["CMS-driven components with predictable editor controls", "Scoped GSAP timelines that respect responsive layout and reduced motion", "Clean custom-code handoff notes so the next developer can maintain it"],
     archHighlights: [
       "Custom JavaScript injection extending Webflow CMS limits",
       "GSAP ScrollTrigger timeline orchestration for immersive story scrolling",
@@ -84,14 +90,8 @@ export default function ProjectShowcase() {
   const [activeProject, setActiveProject] = useState(null);
 
   return (
-    <section className="relative p-8 md:p-16 bg-onyx border-b border-carbon overflow-hidden">
+    <section className="relative overflow-hidden border-b border-carbon bg-carbon p-8 text-vanilla md:p-16">
       {/* Static Ambient Gradient Mesh Background (No movement drift) */}
-      <div
-        className="absolute inset-0 opacity-40 pointer-events-none"
-        style={{
-          background: "radial-gradient(circle at 80% 80%, #36255C 0%, #022E21 40%, #062045 80%, #171717 100%)",
-        }}
-      />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div
@@ -138,7 +138,7 @@ export default function ProjectShowcase() {
               </div>
 
               <div className="pt-4 border-t border-cosmic flex items-center justify-between font-mono text-xs text-lightLime group-hover:text-lime">
-                <span>Inspect Technical Scope</span>
+                <span>Read build note</span>
                 <span>[ + ]</span>
               </div>
             </motion.div>
@@ -163,6 +163,11 @@ export default function ProjectShowcase() {
             </div>
 
             <div>
+              <h4 className="text-xs font-mono text-candyBlue uppercase tracking-widest mb-2 flex items-center gap-1.5"><ClipboardList className="w-4 h-4" /> Engineering Intent</h4>
+              <p className="rounded-lg border border-carbon bg-onyx/50 p-3 text-sm leading-relaxed text-vanilla">{activeProject.scope}</p>
+            </div>
+
+            <div>
               <h4 className="text-xs font-mono text-lime uppercase tracking-widest mb-3 flex items-center gap-1.5">
                 <Layers className="w-4 h-4" /> Architecture Highlights
               </h4>
@@ -173,6 +178,13 @@ export default function ProjectShowcase() {
                     <span>{item}</span>
                   </li>
                 ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xs font-mono text-blush uppercase tracking-widest mb-3 flex items-center gap-1.5"><Gauge className="w-4 h-4" /> What I Delivered</h4>
+              <ul className="space-y-2 text-xs font-mono text-vanilla">
+                {activeProject.delivery.map((item) => <li key={item} className="flex gap-2"><span className="text-blush">→</span>{item}</li>)}
               </ul>
             </div>
 

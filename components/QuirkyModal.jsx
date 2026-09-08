@@ -43,7 +43,7 @@ export default function QuirkyModal({ isOpen, onClose, title, children, badgeCol
       <div
         ref={cardRef}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-2xl bg-carbon border-4 border-lime rounded-2xl p-6 shadow-[10px_10px_0px_#36255C] text-vanilla"
+        className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto bg-carbon border-4 border-lime rounded-2xl p-6 shadow-[10px_10px_0px_#36255C] text-vanilla"
       >
         <div className="flex justify-between items-center pb-4 mb-4 border-b border-cosmic">
           <div className="flex items-center gap-2">

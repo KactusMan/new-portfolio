@@ -97,6 +97,13 @@ html {
   animation: glitch 0.25s infinite;
 }
 
+.button-pop {
+  box-shadow: 4px 4px 0 #020202;
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+.button-pop:hover:not(:disabled), .button-pop:focus-visible { transform: translate(4px, 4px); box-shadow: 0 0 0 #020202; }
+.button-pop:focus-visible { outline: 2px solid var(--color-lime); outline-offset: 4px; }
+
 /* Custom selection highlighting */
 ::selection {
   background-color: #C6FF34;

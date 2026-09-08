@@ -1,8 +1,7 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import QuirkyModal from "./QuirkyModal";
 import { motion } from "framer-motion";
-import gsap from "gsap";
 
 const EXPERIENCES = [
   {
@@ -60,33 +59,8 @@ const EXPERIENCES = [
 
 export default function ExperienceSection() {
   const [activeModal, setActiveModal] = useState(null);
-  const bgMeshRef = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.to(bgMeshRef.current, {
-        backgroundPosition: "200% 200%",
-        duration: 15,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-    });
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section className="relative p-8 md:p-16 bg-cosmic border-b border-carbon overflow-hidden">
-      {/* Ambient Gradient Mesh Background */}
-      <div
-        ref={bgMeshRef}
-        className="absolute inset-0 opacity-35 pointer-events-none transition-all duration-1000"
-        style={{
-          background: "radial-gradient(circle at 70% 30%, #36255C 0%, #062045 40%, #022E21 80%, #171717 100%)",
-          backgroundSize: "200% 200%",
-        }}
-      />
+    <section className="relative overflow-hidden border-b-2 border-onyx bg-lavender p-8 text-onyx md:p-16">
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div
@@ -97,12 +71,12 @@ export default function ExperienceSection() {
           className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12"
         >
           <div>
-            <span className="text-xs font-mono text-candyBlue uppercase tracking-widest">{"// "}Track Record</span>
-            <h2 className="text-4xl md:text-6xl font-black text-vanilla font-display uppercase tracking-tight">
+            <span className="text-xs font-mono text-violet uppercase tracking-widest">{"// "}Track Record</span>
+            <h2 className="text-4xl md:text-6xl font-black text-onyx font-display uppercase tracking-tight">
               Work Experience
             </h2>
           </div>
-          <p className="text-sm font-mono text-lavender mt-2 md:mt-0">
+          <p className="text-sm font-mono text-violet mt-2 md:mt-0">
             Click any card to inspect full technical scope ↗
           </p>
         </motion.div>

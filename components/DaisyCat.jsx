@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import gsap from "gsap";
 
 const CAT_IDLE = `
@@ -42,16 +43,22 @@ const CAT_STATES = [
 ];
 
 export default function DaisyCat() {
+  const [mounted, setMounted] = useState(false);
   const [stateIndex, setStateIndex] = useState(0);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [petCount, setPetCount] = useState(0);
   const catRef = useRef(null);
   const cardRef = useRef(null);
 
   const currentState = CAT_STATES[stateIndex];
 
+  // Portals need a real document, so only render after mount (client-side)
   useEffect(() => {
-    // Gentle breathing / levitation animation
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     const ctx = gsap.context(() => {
       gsap.to(catRef.current, {
         y: -5,
@@ -61,11 +68,9 @@ export default function DaisyCat() {
         ease: "sine.inOut",
       });
     });
-
     return () => ctx.revert();
-  }, []);
+  }, [mounted]);
 
-  // Cycle Daisy's mood on scroll
   useEffect(() => {
     let lastScrollY = 0;
     const handleScroll = () => {
@@ -83,9 +88,7 @@ export default function DaisyCat() {
 
   const handlePet = () => {
     setPetCount((prev) => prev + 1);
-    // Cycle mood
     setStateIndex((prev) => (prev + 1) % CAT_STATES.length);
-    // Pop animation
     if (cardRef.current) {
       gsap.fromTo(
         cardRef.current,
@@ -95,28 +98,25 @@ export default function DaisyCat() {
     }
   };
 
-  if (!isOpen) {
-    return (
-      <button
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 left-6 z-50 font-mono text-xs font-bold bg-blush text-onyx px-3 py-2 rounded-xl border border-onyx shadow-[4px_4px_0px_#020202] hover:scale-105 active:scale-95 transition-transform cursor-pointer flex items-center gap-2"
-      >
-        🐱 Wake Up Daisy
-      </button>
-    );
-  }
+  if (!mounted) return null;
 
-  return (
+  const widget = !isOpen ? (
+    <button
+      onClick={() => setIsOpen(true)}
+      className="fixed bottom-6 left-6 z-[9999] font-mono text-xs font-bold bg-blush text-onyx px-3 py-2 rounded-xl border-2 border-onyx shadow-[4px_4px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#000] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all cursor-pointer flex items-center gap-2"
+    >
+      🌙 Wake Up Daisy
+    </button>
+  ) : (
     <div
       ref={catRef}
-      className="fixed bottom-6 left-6 z-50 select-none"
+      className="fixed bottom-6 left-6 z-[9999] select-none"
     >
       <div
         ref={cardRef}
         onClick={handlePet}
-        className="relative bg-carbon border-2 border-blush p-3 rounded-2xl shadow-[6px_6px_0px_#020202] text-vanilla cursor-pointer hover:border-lime transition-colors group"
+        className="relative bg-carbon border-2 border-blush p-3 rounded-2xl shadow-[6px_6px_0px_#000] text-vanilla cursor-pointer hover:border-lime transition-colors group"
       >
-        {/* Dismiss X */}
         <button
           onClick={(e) => {
             e.stopPropagation();
@@ -128,7 +128,6 @@ export default function DaisyCat() {
           ×
         </button>
 
-        {/* Daisy's Status LED */}
         <div className="flex items-center gap-2 mb-1">
           <div className="w-2 h-2 rounded-full bg-blush animate-pulse" />
           <span className="font-mono text-[9px] uppercase tracking-widest text-blush font-bold">
@@ -136,16 +135,18 @@ export default function DaisyCat() {
           </span>
         </div>
 
-        {/* ASCII Cat Art */}
         <pre className={`font-mono text-[11px] leading-tight select-none ${currentState.color} transition-colors`}>
           {currentState.ascii}
         </pre>
 
-        {/* Pet counter */}
         <div className="mt-1 pt-1 border-t border-cosmic font-mono text-[9px] text-lavender/60 text-center flex items-center justify-center gap-1">
           {petCount > 0 ? `petted ${petCount}x 💛` : "click to pet daisy"}
         </div>
       </div>
     </div>
   );
+
+  // Portal straight to <body> so no parent's transform/overflow can ever
+  // hijack position:fixed. This is the actual fix for the "not sticky" bug.
+  return createPortal(widget, document.body);
 }

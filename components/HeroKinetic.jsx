@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 import Link from "next/link";
 import { Coffee, Sparkles, ExternalLink, ArrowDownRight } from "lucide-react";
@@ -21,15 +21,11 @@ IIIII DDDD  RRRR  EEEEE EEEEE SSSS
 IIIII DDDD  R  RR EEEEE EEEEE SSSS`;
 
 export default function HeroKinetic() {
-  const svgSquiggleRef = useRef(null);
   const [asciiState, setAsciiState] = useState("(⌐■_■)");
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(".marquee-track", { xPercent: -50, repeat: -1, duration: 14, ease: "none" });
-      if (svgSquiggleRef.current) {
-        gsap.to(svgSquiggleRef.current, { strokeDashoffset: -40, duration: 3, repeat: -1, ease: "none" });
-      }
       gsap.fromTo(
         ".hero-line",
         { opacity: 0, y: 20 },
@@ -40,8 +36,7 @@ export default function HeroKinetic() {
   }, []);
 
   return (
-    <section className="relative min-h-[92vh] bg-onyx text-vanilla overflow-hidden flex flex-col justify-between p-6 md:p-12 border-b border-carbon crt-scanlines">
-      <div className="absolute inset-0 opacity-60 pointer-events-none" style={{ background: "radial-gradient(ellipse at 14% 18%, #36255C 0%, transparent 35%), radial-gradient(ellipse at 88% 72%, #022E21 0%, transparent 38%), linear-gradient(135deg, #062045 0%, #171717 56%, #020202 100%)" }} />
+    <section className="relative min-h-[92vh] bg-cosmic text-vanilla overflow-hidden flex flex-col justify-between p-6 md:p-12 border-b border-carbon">
 
       <div className="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div className="flex items-center gap-3">
@@ -49,7 +44,7 @@ export default function HeroKinetic() {
             {asciiState}
           </button>
           <div className="flex flex-col">
-            <span className="text-xs uppercase tracking-widest text-vanilla font-mono font-bold">Rayan Idrees</span>
+            <span className="text-xs uppercase tracking-widest text-vanilla font-mono font-bold">Rayan Idrees <span className="ml-1 text-candyBlue">a.k.a. kactusman</span></span>
             <span className="text-[10px] font-mono text-lavender/80">Senior CMS Architect & Frontend Specialist</span>
           </div>
         </div>
@@ -58,28 +53,24 @@ export default function HeroKinetic() {
           <a href="#websites" className="hidden items-center gap-1.5 border border-lavender/40 px-3 py-1.5 text-lavender transition-colors hover:border-lime hover:text-lime md:flex">WORK <ArrowDownRight className="h-3.5 w-3.5" /></a>
           <a href="#contact" className="hidden border border-lavender/40 px-3 py-1.5 text-lavender transition-colors hover:border-candyBlue hover:text-candyBlue md:block">CONTACT</a>
           <span className="bg-tealGreen text-lightLime px-3 py-1.5 rounded-full border border-lightLime/20 flex items-center gap-1.5"><Coffee className="w-3.5 h-3.5 text-lime animate-bounce" /> 4+ YEARS IN THE TRENCHES (CMS & FRONTEND)</span>
-          <span className="bg-cosmic text-candyBlue px-3 py-1.5 rounded-full border border-candyBlue/30">RUNNING ON COFFEE & CLEAN CODE ☕</span>
-          <Link href="/playground" className="flex items-center gap-1.5 bg-lime text-onyx font-bold px-3.5 py-1.5 rounded-full border border-onyx hover:bg-candyBlue hover:scale-105 transition-all shadow-[3px_3px_0px_#020202]"><Sparkles className="w-3.5 h-3.5" /> PLAYGROUND <ExternalLink className="w-3 h-3" /></Link>
+          {/* <span className="bg-cosmic text-candyBlue px-3 py-1.5 rounded-full border border-candyBlue/30">RUNNING ON COFFEE & CLEAN CODE ☕</span> */}
+          <Link href="/playground" className="button-pop flex items-center gap-1.5 rounded-full border border-onyx bg-lime px-3.5 py-1.5 font-bold text-onyx"><Sparkles className="w-3.5 h-3.5" /> PLAYGROUND <ExternalLink className="w-3 h-3" /></Link>
         </div>
       </div>
 
-      <div className="relative z-10 my-6 flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center">
+      <div className="relative z-10 my-6 grid gap-8 lg:grid-cols-[minmax(0,1fr)_440px] lg:items-start lg:gap-12">
         <div className="flex-1 max-w-3xl">
           <h1 className="text-5xl sm:text-7xl md:text-9xl font-display font-black uppercase tracking-tight leading-none text-vanilla">
             <span className="hero-line block">SENIOR</span>
-            <span className="hero-line block relative text-lime group cursor-pointer">CMS & FRONTEND
-              <svg className="absolute left-0 bottom-[-6px] w-full h-[14px] text-candyBlue overflow-visible pointer-events-none" viewBox="0 0 300 20" preserveAspectRatio="none"><path ref={svgSquiggleRef} d="M0 10 Q 15 2, 30 10 T 60 10 T 90 10 T 120 10 T 150 10 T 180 10 T 210 10 T 240 10 T 270 10 T 300 10" fill="none" stroke="currentColor" strokeWidth="3.5" strokeDasharray="12 6" className="transition-all group-hover:text-lime" /></svg>
-            </span>
+            <span className="hero-line block text-lime">CMS & FRONTEND</span>
             <span className="hero-line block">ARCHITECT.</span>
           </h1>
           <p className="hero-line mt-6 text-base md:text-lg text-lavender max-w-2xl font-body leading-relaxed">I build useful web systems with a little bit of mischief: headless storefronts, custom WordPress engines, liquid Shopify systems, and React/Next.js applications.</p>
-          <a href="#websites" className="hero-line mt-7 inline-flex items-center gap-3 rounded-full bg-lime px-5 py-3 font-mono text-xs font-bold text-onyx shadow-[4px_4px_0px_#82D5E5] transition-transform hover:-translate-y-1">SEE THE SITE ARCHIVE <ArrowDownRight className="h-4 w-4" /></a>
+          <a href="#websites" className="button-pop hero-line mt-7 inline-flex items-center gap-3 rounded-full border-2 border-onyx bg-lime px-5 py-3 font-mono text-xs font-bold text-onyx hover:bg-candyBlue">SEE THE SITE ARCHIVE <ArrowDownRight className="h-4 w-4" /></a>
         </div>
 
-        <div className="hero-line flex-shrink-0 w-full lg:w-[440px]">
+        <div className="hero-line w-full lg:justify-self-end lg:pt-2">
           <div className="relative overflow-hidden bg-carbon border-2 border-carbon rounded-2xl shadow-[8px_8px_0px_#23212C]">
-            <div className="absolute -right-20 -top-24 h-56 w-56 rounded-full bg-lavender/20 blur-3xl pointer-events-none" />
-            <div className="absolute -left-16 bottom-0 h-40 w-40 rounded-full bg-lime/10 blur-3xl pointer-events-none" />
             <div className="relative flex items-center gap-2 px-4 py-2.5 bg-cosmic border-b border-carbon"><span className="w-3 h-3 rounded-full bg-blush border border-onyx" /><span className="w-3 h-3 rounded-full bg-vanilla border border-onyx" /><span className="w-3 h-3 rounded-full bg-lightLime border border-onyx" /><span className="ml-2 font-mono text-[10px] text-lavender/80">rayan@portfolio ~ $</span></div>
             <div className="relative p-4 font-mono text-xs space-y-3">
               <div><span className="text-lavender/60">$ whoami</span><pre className="text-lime leading-tight mt-1 text-[10px] sm:text-[11px] select-none overflow-x-auto">{RAYAN_IDREES_ASCII}</pre></div>
@@ -90,6 +81,7 @@ export default function HeroKinetic() {
  > ^ <`}</pre>
               </div>
               <div className="pt-2 border-t border-cosmic space-y-1.5">
+                <div className="flex justify-between"><span className="text-lavender/70">alias:</span><span className="text-candyBlue">kactusman</span></div>
                 <div className="flex justify-between"><span className="text-lavender/70">role:</span><span className="text-candyBlue">Senior CMS Developer</span></div>
                 <div className="flex justify-between"><span className="text-lavender/70">xp:</span><span className="text-lime">4+ years</span></div>
                 <div className="flex justify-between"><span className="text-lavender/70">stack:</span><span className="text-blush">WP • Shopify • Next.js • GSAP</span></div>

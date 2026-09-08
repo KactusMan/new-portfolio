@@ -7,6 +7,10 @@ const SKILLS = [
   { name: "PHP & Backend Logic", level: "Expert", color: "bg-blush text-onyx" },
   { name: "React & Next.js", level: "Expert", color: "bg-candyBlue text-onyx" },
   { name: "Webflow & Framer", level: "Expert", color: "bg-vanilla text-onyx" },
+  { name: "Wix Classic Editor", level: "Expert", color: "bg-candyBlue text-onyx" },
+  { name: "Wix Studio & Harmony", level: "Advanced", color: "bg-blush text-onyx" },
+  { name: "Squarespace", level: "Advanced", color: "bg-lavender text-onyx" },
+  { name: "Custom CMS Architecture", level: "Expert", color: "bg-lime text-onyx" },
   { name: "REST APIs & Webhooks", level: "Expert", color: "bg-lime text-onyx" },
   { name: "JavaScript / GSAP", level: "Advanced", color: "bg-violet text-vanilla" },
   { name: "Tailwind & CSS", level: "Expert", color: "bg-navy text-vanilla" },
@@ -15,11 +19,12 @@ const SKILLS = [
 export default function SkillsDoodles() {
   return (
     <section className="p-8 md:p-16 bg-onyx border-b border-carbon relative overflow-hidden">
-      {/* Acid Lime Pulse – static gradient mesh */}
+      {/* Ambient gradient mesh - single static layer, not stacked */}
       <div
         className="absolute inset-0 opacity-35 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse at 30% 70%, #022E21 0%, #C6FF34 20%, #CDFC8A 35%, #022E21 60%, #171717 100%)",
+          background:
+"radial-gradient(circle at 15% 20%, rgba(198,255,52,.18), transparent 35%), radial-gradient(circle at 85% 70%, rgba(130,213,229,.12), transparent 30%), radial-gradient(circle at 50% 100%, rgba(210,195,246,.10), transparent 40%), linear-gradient(180deg,#171717,#020202)"
         }}
       />
 
@@ -37,15 +42,15 @@ export default function SkillsDoodles() {
         </motion.div>
 
         <div className="flex flex-wrap gap-4">
-          {SKILLS.map((skill, i) => (
+          {SKILLS.map((skill) => (
             <motion.div
-              key={i}
+              key={skill.name}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
+              transition={{ duration: 0.4 }}
               whileHover={{ scale: 1.08, rotate: -2 }}
-              className={`font-mono text-sm md:text-base font-bold px-5 py-3 rounded-xl border-2 border-onyx shadow-[4px_4px_0px_#171717] transition-transform cursor-default select-none ${skill.color}`}
+              className={`font-mono text-sm md:text-base font-bold px-5 py-3 rounded-xl border-2 border-onyx shadow-[4px_4px_0px_#000] transition-transform cursor-default select-none ${skill.color}`}
             >
               {skill.name} <span className="opacity-60 text-xs ml-2">[{skill.level}]</span>
             </motion.div>
