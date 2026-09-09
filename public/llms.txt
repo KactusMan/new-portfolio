@@ -1,0 +1,30 @@
+# Rayan Idrees (Kactusman) - Senior CMS Architect & Frontend Specialist
+
+> Full-stack Frontend Developer and CMS Specialist with 4+ years of experience architecting high-performance web applications, headless commerce systems, enterprise WordPress platforms, custom Liquid Shopify themes, and Next.js applications.
+
+## Quick Facts
+- Name: Rayan Idrees
+- Alias: kactusman
+- Title: Senior CMS Architect & Frontend Specialist
+- Experience: 4+ Years
+- Primary Stack: WordPress (ACF Pro, Custom PHP), Shopify (Liquid, Storefront API), React / Next.js (App Router), GSAP, Webflow, Framer, Tailwind CSS
+- Email: Rayanidrees4@gmail.com
+- Portfolio URL: https://rayanidrees.vercel.app
+
+## Key Projects & Case Studies
+1. Steele Auto Group (steeleauto.com): Enterprise automotive network (56 dealerships). Custom PHP, ACF flexible content modules, high-speed custom architecture.
+2. Spazietto (spazietto.com): Luxury Italian-inspired cabinetry brand. Custom PHP plugins, ACF integration, bespoke layout system.
+3. Digi Consulting Group (digiconsultinggroup.com): Digital transformation firm. Built with Next.js App Router, Three.js 3D canvas, and Tailwind.
+4. Pulse Drink (pulsedrink.com): High-energy beverage brand showcase built on Framer with custom motion physics.
+
+## Core Capabilities
+- CMS Platform Customization: WordPress, Shopify, Webflow, Framer, Wix, Squarespace
+- Headless Architecture: Next.js + Shopify Storefront GraphQL API, Headless WP REST API
+- Frontend Engineering: React, Next.js App Router, TypeScript/JavaScript, GSAP Motion, Tailwind CSS
+- Performance & SEO: Core Web Vitals optimization, Schema.org JSON-LD, Semantic HTML5
+
+## Documentation & Full Information
+- Full Specifications: https://rayanidrees.vercel.app/llms-full.txt
+- Projects Archive: https://rayanidrees.vercel.app/projects
+- About & Background: https://rayanidrees.vercel.app/about
+- Contact & Inquiries: https://rayanidrees.vercel.app/contact

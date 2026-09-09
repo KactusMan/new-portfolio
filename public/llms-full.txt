@@ -1,0 +1,39 @@
+# Rayan Idrees (Kactusman) - Detailed AI Knowledge File
+
+## Overview
+Rayan Idrees is a Senior CMS Architect and Frontend Specialist with over 4 years of experience building high-traffic production websites, headless ecommerce platforms, and bespoke web applications.
+
+## Technical Work History
+- **Senior CMS Developer** at Turn Up Technologies (June 2025 - Present): Architecting multi-platform CMS solutions across WordPress, Shopify, Webflow, Framer, Wix, and Squarespace with custom PHP/Liquid APIs and JS runtime hooks.
+- **Senior CMS Developer (Lead)** at TechBlent (2023 - May 2025): Led developer teams delivering headless storefronts and enterprise custom WordPress builds for international clients.
+- **Frontend Developer** at Lime Software Logics (2023): Developed React components, Tailwind UI components, and dynamic PHP frontend modules.
+- **Frontend Developer** at Saazsol (2022 - 2023): Built component libraries and full-stack React/PHP web solutions.
+
+## Platform Expertise
+### WordPress
+- Advanced Custom Fields (ACF Pro) JSON field sync
+- Custom Gutenberg blocks & flexible content architecture
+- REST API endpoint customization (`register_rest_route`)
+- Custom PHP theme engineering without bloated page builders
+
+### Shopify
+- Custom Liquid template architecture and section rendering
+- Shopify Storefront GraphQL API integration with Next.js
+- Cart drawer AJAX API & variant switcher customization
+
+### Modern Web Frameworks
+- Next.js 14/15 App Router & Server Components
+- React 18/19 & Client state orchestration
+- GSAP (GreenSock) animation timelines & ScrollTrigger physics
+- Tailwind CSS & custom design token systems
+
+## Live Portfolio Work
+- Steele Auto Group: https://steeleauto.com
+- Spazietto: https://spazietto.com
+- Digi Consulting Group: https://digiconsultinggroup.com
+- Pulse Drink: https://pulsedrink.com
+
+## Contact Information
+- Email: Rayanidrees4@gmail.com
+- Main Site: https://rayanidrees.vercel.app
+- GitHub/Alias: kactusman

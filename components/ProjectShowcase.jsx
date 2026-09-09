@@ -90,10 +90,10 @@ export default function ProjectShowcase() {
   const [activeProject, setActiveProject] = useState(null);
 
   return (
-    <section className="relative overflow-hidden border-b border-carbon bg-carbon p-8 text-vanilla md:p-16">
+    <section className="relative overflow-hidden border-b border-carbon bg-carbon text-vanilla py-16 md:py-24">
       {/* Static Ambient Gradient Mesh Background (No movement drift) */}
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

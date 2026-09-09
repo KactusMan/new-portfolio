@@ -36,65 +36,112 @@ export default function HeroKinetic() {
   }, []);
 
   return (
-    <section className="relative min-h-[92vh] bg-cosmic text-vanilla overflow-hidden flex flex-col justify-between p-6 md:p-12 border-b border-carbon">
+    <section className="relative min-h-[90vh] bg-cosmic text-vanilla overflow-hidden flex flex-col justify-between border-b border-carbon">
 
-      <div className="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-        <div className="flex items-center gap-3">
-          <button onClick={() => setAsciiState(ASCII_EMOJIS[Math.floor(Math.random() * ASCII_EMOJIS.length)])} className="font-mono text-lime text-lg md:text-2xl bg-cosmic border border-candyBlue px-3.5 py-1.5 rounded-xl transition-transform cursor-pointer shadow-[4px_4px_0px_#82D5E5] hover-glitch hover:scale-110 active:scale-95" title="Click to toggle ASCII mood!">
-            {asciiState}
-          </button>
-          <div className="flex flex-col">
-            <span className="text-xs uppercase tracking-widest text-vanilla font-mono font-bold">Rayan Idrees <span className="ml-1 text-candyBlue">a.k.a. kactusman</span></span>
-            <span className="text-[10px] font-mono text-lavender/80">Senior CMS Architect & Frontend Specialist</span>
+      {/* Main Boxed Hero Container */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-12 md:pt-10 flex-1 flex flex-col justify-between">
+        {/* Top Header Bar */}
+        <div className="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div className="flex items-center gap-3">
+            <button onClick={() => setAsciiState(ASCII_EMOJIS[Math.floor(Math.random() * ASCII_EMOJIS.length)])} className="font-mono text-lime text-lg md:text-2xl bg-cosmic border border-candyBlue px-3.5 py-1.5 rounded-xl transition-transform cursor-pointer shadow-[4px_4px_0px_#82D5E5] hover-glitch hover:scale-110 active:scale-95" title="Click to toggle ASCII mood!">
+              {asciiState}
+            </button>
+            <div className="flex flex-col">
+              <span className="text-xs uppercase tracking-widest text-vanilla font-mono font-bold">Rayan Idrees <span className="ml-1 text-candyBlue">a.k.a. kactusman</span></span>
+              <span className="text-[10px] font-mono text-lavender/80">Senior CMS Architect & Frontend Specialist</span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2.5 font-mono text-xs flex-wrap">
+            <Link href="/projects" className="button-pop flex items-center gap-1.5 rounded-full border border-onyx bg-lime px-3.5 py-1.5 font-bold text-onyx shadow-[2px_2px_0px_#000] hover:bg-candyBlue transition-colors">
+              <Sparkles className="w-3.5 h-3.5" /> PROJECTS <ArrowDownRight className="w-3.5 h-3.5" />
+            </Link>
+            <Link href="/about" className="border border-lavender/40 px-3.5 py-1.5 text-lavender rounded-full transition-colors hover:border-lime hover:text-lime">
+              ABOUT
+            </Link>
+            <Link href="/contact" className="border border-lavender/40 px-3.5 py-1.5 text-lavender rounded-full transition-colors hover:border-candyBlue hover:text-candyBlue">
+              CONTACT
+            </Link>
+            <span className="bg-tealGreen text-lightLime px-3 py-1.5 rounded-full border border-lightLime/20 hidden sm:flex items-center gap-1.5">
+              <Coffee className="w-3.5 h-3.5 text-lime animate-bounce" /> 4+ YEARS EXPERT
+            </span>
           </div>
         </div>
 
-        <div className="flex items-center gap-3 font-mono text-xs flex-wrap">
-          <a href="#websites" className="hidden items-center gap-1.5 border border-lavender/40 px-3 py-1.5 text-lavender transition-colors hover:border-lime hover:text-lime md:flex">WORK <ArrowDownRight className="h-3.5 w-3.5" /></a>
-          <a href="#contact" className="hidden border border-lavender/40 px-3 py-1.5 text-lavender transition-colors hover:border-candyBlue hover:text-candyBlue md:block">CONTACT</a>
-          <span className="bg-tealGreen text-lightLime px-3 py-1.5 rounded-full border border-lightLime/20 flex items-center gap-1.5"><Coffee className="w-3.5 h-3.5 text-lime animate-bounce" /> 4+ YEARS IN THE TRENCHES (CMS & FRONTEND)</span>
-          {/* <span className="bg-cosmic text-candyBlue px-3 py-1.5 rounded-full border border-candyBlue/30">RUNNING ON COFFEE & CLEAN CODE ☕</span> */}
-          <Link href="/playground" className="button-pop flex items-center gap-1.5 rounded-full border border-onyx bg-lime px-3.5 py-1.5 font-bold text-onyx"><Sparkles className="w-3.5 h-3.5" /> PLAYGROUND <ExternalLink className="w-3 h-3" /></Link>
-        </div>
-      </div>
+        {/* Hero Grid Content */}
+        <div className="relative z-10 my-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_440px] lg:items-start lg:gap-12">
+          <div className="flex-1 max-w-3xl">
+            <h1 className="text-5xl sm:text-7xl md:text-9xl font-display font-black uppercase tracking-tight leading-none text-vanilla">
+              <span className="hero-line block">SENIOR</span>
+              <span className="hero-line block text-lime">CMS & FRONTEND</span>
+              <span className="hero-line block">ARCHITECT.</span>
+            </h1>
+            <p className="hero-line mt-6 text-base md:text-lg text-lavender max-w-2xl font-body leading-relaxed">
+              I build high-performance web platforms: headless storefronts, custom WordPress engines, liquid Shopify systems, and Next.js applications.
+            </p>
+            <div className="hero-line mt-7 flex flex-wrap gap-3 items-center">
+              <a href="#websites" className="button-pop inline-flex items-center gap-3 rounded-full border-2 border-onyx bg-lime px-5 py-3 font-mono text-xs font-bold text-onyx hover:bg-candyBlue transition-colors shadow-[4px_4px_0px_#000]">
+                SEE SITE ARCHIVE <ArrowDownRight className="h-4 w-4" />
+              </a>
+              <Link href="/contact" className="inline-flex items-center gap-2 rounded-full border-2 border-lavender/30 bg-carbon px-5 py-3 font-mono text-xs font-bold text-vanilla hover:border-lime transition-colors">
+                GET IN TOUCH
+              </Link>
+            </div>
+          </div>
 
-      <div className="relative z-10 my-6 grid gap-8 lg:grid-cols-[minmax(0,1fr)_440px] lg:items-start lg:gap-12">
-        <div className="flex-1 max-w-3xl">
-          <h1 className="text-5xl sm:text-7xl md:text-9xl font-display font-black uppercase tracking-tight leading-none text-vanilla">
-            <span className="hero-line block">SENIOR</span>
-            <span className="hero-line block text-lime">CMS & FRONTEND</span>
-            <span className="hero-line block">ARCHITECT.</span>
-          </h1>
-          <p className="hero-line mt-6 text-base md:text-lg text-lavender max-w-2xl font-body leading-relaxed">I build useful web systems with a little bit of mischief: headless storefronts, custom WordPress engines, liquid Shopify systems, and React/Next.js applications.</p>
-          <a href="#websites" className="button-pop hero-line mt-7 inline-flex items-center gap-3 rounded-full border-2 border-onyx bg-lime px-5 py-3 font-mono text-xs font-bold text-onyx hover:bg-candyBlue">SEE THE SITE ARCHIVE <ArrowDownRight className="h-4 w-4" /></a>
-        </div>
-
-        <div className="hero-line w-full lg:justify-self-end lg:pt-2">
-          <div className="relative overflow-hidden bg-carbon border-2 border-carbon rounded-2xl shadow-[8px_8px_0px_#23212C]">
-            <div className="relative flex items-center gap-2 px-4 py-2.5 bg-cosmic border-b border-carbon"><span className="w-3 h-3 rounded-full bg-blush border border-onyx" /><span className="w-3 h-3 rounded-full bg-vanilla border border-onyx" /><span className="w-3 h-3 rounded-full bg-lightLime border border-onyx" /><span className="ml-2 font-mono text-[10px] text-lavender/80">rayan@portfolio ~ $</span></div>
-            <div className="relative p-4 font-mono text-xs space-y-3">
-              <div><span className="text-lavender/60">$ whoami</span><pre className="text-lime leading-tight mt-1 text-[10px] sm:text-[11px] select-none overflow-x-auto">{RAYAN_IDREES_ASCII}</pre></div>
-              <div className="grid grid-cols-[1fr_auto] items-end gap-3 rounded-xl border border-lavender/20 bg-onyx/70 p-3">
-                <div className="space-y-2"><div className="h-1.5 w-28 rounded-full bg-lavender/20 overflow-hidden"><div className="h-full w-2/3 bg-candyBlue animate-pulse" /></div><div className="h-1.5 w-20 rounded-full bg-lime/20 overflow-hidden"><div className="h-full w-4/5 bg-lime" /></div></div>
-                <pre className="font-mono text-[10px] leading-none text-blush select-none">{` /\\_/\\
+          {/* Terminal Box - Polished & Mobile Responsive */}
+          <div className="hero-line w-full lg:justify-self-end lg:pt-2">
+            <div className="relative overflow-hidden bg-carbon border-2 border-carbon rounded-2xl shadow-[8px_8px_0px_#23212C]">
+              <div className="relative flex items-center justify-between px-4 py-2.5 bg-cosmic border-b border-carbon">
+                <div className="flex items-center gap-2">
+                  <span className="w-3 h-3 rounded-full bg-blush border border-onyx" />
+                  <span className="w-3 h-3 rounded-full bg-vanilla border border-onyx" />
+                  <span className="w-3 h-3 rounded-full bg-lightLime border border-onyx" />
+                </div>
+                <span className="font-mono text-[10px] text-lavender/80">rayan@portfolio ~ $</span>
+              </div>
+              <div className="relative p-4 font-mono text-xs space-y-3">
+                <div>
+                  <span className="text-lavender/60">$ whoami</span>
+                  <pre className="text-lime leading-none mt-2.5 text-[8px] sm:text-[10px] md:text-[11px] font-mono font-bold select-none overflow-x-auto scrollbar-none tracking-tighter">
+                    {RAYAN_IDREES_ASCII}
+                  </pre>
+                </div>
+                <div className="grid grid-cols-[1fr_auto] items-center gap-3 rounded-xl border border-lavender/20 bg-onyx/70 p-3">
+                  <div className="space-y-2">
+                    <div className="h-1.5 w-28 rounded-full bg-lavender/20 overflow-hidden">
+                      <div className="h-full w-2/3 bg-candyBlue animate-pulse" />
+                    </div>
+                    <div className="h-1.5 w-20 rounded-full bg-lime/20 overflow-hidden">
+                      <div className="h-full w-4/5 bg-lime" />
+                    </div>
+                  </div>
+                  <pre className="font-mono text-[9px] sm:text-[10px] leading-tight text-blush select-none">{` /\\_/\\
 ( o.o )
  > ^ <`}</pre>
+                </div>
+                <div className="pt-2 border-t border-cosmic space-y-1.5 text-[11px]">
+                  <div className="flex justify-between"><span className="text-lavender/70">alias:</span><span className="text-candyBlue font-bold">kactusman</span></div>
+                  <div className="flex justify-between"><span className="text-lavender/70">role:</span><span className="text-candyBlue">Senior CMS Developer</span></div>
+                  <div className="flex justify-between"><span className="text-lavender/70">xp:</span><span className="text-lime font-bold">4+ years</span></div>
+                  <div className="flex justify-between"><span className="text-lavender/70">stack:</span><span className="text-blush">WP • Shopify • Next.js • GSAP</span></div>
+                  <div className="flex justify-between"><span className="text-lavender/70">fuel:</span><span className="text-vanilla">☕ coffee (infinite)</span></div>
+                  <div className="flex justify-between"><span className="text-lavender/70">cat:</span><span className="text-blush">daisy 🐱 (supervising)</span></div>
+                </div>
+                <div className="pt-2 border-t border-cosmic text-[11px]"><span className="text-lime animate-pulse">█</span><span className="text-lavender/50 ml-1">ready for next project...</span></div>
               </div>
-              <div className="pt-2 border-t border-cosmic space-y-1.5">
-                <div className="flex justify-between"><span className="text-lavender/70">alias:</span><span className="text-candyBlue">kactusman</span></div>
-                <div className="flex justify-between"><span className="text-lavender/70">role:</span><span className="text-candyBlue">Senior CMS Developer</span></div>
-                <div className="flex justify-between"><span className="text-lavender/70">xp:</span><span className="text-lime">4+ years</span></div>
-                <div className="flex justify-between"><span className="text-lavender/70">stack:</span><span className="text-blush">WP • Shopify • Next.js • GSAP</span></div>
-                <div className="flex justify-between"><span className="text-lavender/70">fuel:</span><span className="text-vanilla">☕ coffee (infinite)</span></div>
-                <div className="flex justify-between"><span className="text-lavender/70">cat:</span><span className="text-blush">daisy 🐱 (supervising)</span></div>
-              </div>
-              <div className="pt-2 border-t border-cosmic"><span className="text-lime animate-pulse">█</span><span className="text-lavender/50 ml-1">ready for next project...</span></div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="relative z-10 w-full overflow-hidden bg-lime text-onyx py-3 border-y-2 border-onyx shadow-[0_4px_20px_rgba(198,255,52,0.3)]"><div className="marquee-track flex whitespace-nowrap font-display text-lg md:text-2xl font-black tracking-wider uppercase select-none"><span className="mx-6">⚡ WORDPRESS REST API & ACF PRO • HEADLESS SHOPIFY & LIQUID • NEXT.JS APP ROUTER • GSAP MOTION PHYSICS • WEBFLOW CUSTOM CODE • </span><span className="mx-6">⚡ WORDPRESS REST API & ACF PRO • HEADLESS SHOPIFY & LIQUID • NEXT.JS APP ROUTER • GSAP MOTION PHYSICS • WEBFLOW CUSTOM CODE • </span></div></div>
+      {/* Marquee Banner - Full Width Green Outer Wrapper */}
+      <div className="w-full bg-lime text-onyx py-3.5 border-t-2 border-b-2 border-onyx shadow-[0_4px_20px_rgba(198,255,52,0.3)]">
+        <div className="marquee-track flex whitespace-nowrap font-display text-lg md:text-2xl font-black tracking-wider uppercase select-none">
+          <span className="mx-6">⚡ WORDPRESS REST API & ACF PRO • HEADLESS SHOPIFY & LIQUID • NEXT.JS APP ROUTER • GSAP MOTION PHYSICS • WEBFLOW CUSTOM CODE • </span>
+          <span className="mx-6">⚡ WORDPRESS REST API & ACF PRO • HEADLESS SHOPIFY & LIQUID • NEXT.JS APP ROUTER • GSAP MOTION PHYSICS • WEBFLOW CUSTOM CODE • </span>
+        </div>
+      </div>
     </section>
   );
 }

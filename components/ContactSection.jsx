@@ -37,14 +37,14 @@ export default function ContactSection() {
   };
 
   return (
-    <footer id="contact" className="relative overflow-hidden bg-carbon p-8 text-vanilla md:p-16 bg-tealForest text-vanillaLatte border-t border-vanillaLatte/20" >
-      <div className="relative z-10 mx-auto max-w-6xl">
+    <footer id="contact" className="relative overflow-hidden bg-carbon py-16 md:py-24 text-vanilla border-t border-carbon">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <div>
             <div className="mb-3 flex items-center gap-2"><Terminal className="h-4 w-4 text-lime" /><span className="font-mono text-xs uppercase tracking-widest text-lime">{"// Direct channel"}</span></div>
             <h2 className="font-display text-5xl uppercase leading-[0.86] md:text-7xl">Start a<br /><span className="text-lime">good thing.</span></h2>
             <p className="mt-5 max-w-sm font-body text-sm leading-relaxed text-lavender">Got a storefront, CMS, or frontend puzzle that needs both good judgement and a little personality? Send a signal.</p>
-            <p className="mt-7 font-mono text-xs text-candyBlue">Karachi, Pakistan · kactusmannn@gmail.com</p>
+            <p className="mt-7 font-mono text-xs text-candyBlue">Karachi, Pakistan · Rayanidrees4@gmail.com</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="https://github.com/kactusman" target="_blank" rel="noreferrer" className="flex items-center gap-2 border border-lavender/30 bg-onyx px-3 py-2 font-mono text-xs text-vanilla transition-colors hover:border-lime hover:text-lime"><ExternalLink className="h-4 w-4" /> GitHub / kactusman</a>
               <a href="https://www.linkedin.com/in/rayan-idrees-435a56219/" target="_blank" rel="noreferrer" className="flex items-center gap-2 border border-lavender/30 bg-onyx px-3 py-2 font-mono text-xs text-vanilla transition-colors hover:border-candyBlue hover:text-candyBlue"><Link2 className="h-4 w-4" /> LinkedIn</a>

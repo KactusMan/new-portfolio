@@ -60,9 +60,9 @@ const EXPERIENCES = [
 export default function ExperienceSection() {
   const [activeModal, setActiveModal] = useState(null);
   return (
-    <section className="relative overflow-hidden border-b-2 border-onyx bg-lavender p-8 text-onyx md:p-16">
+    <section className="relative overflow-hidden border-b-2 border-onyx bg-lavender text-onyx py-16 md:py-24">
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -18,17 +18,17 @@ const SKILLS = [
 
 export default function SkillsDoodles() {
   return (
-    <section className="p-8 md:p-16 bg-onyx border-b border-carbon relative overflow-hidden">
+    <section className="bg-onyx border-b border-carbon relative overflow-hidden py-16 md:py-24">
       {/* Ambient gradient mesh - single static layer, not stacked */}
       <div
         className="absolute inset-0 opacity-35 pointer-events-none"
         style={{
           background:
-"radial-gradient(circle at 15% 20%, rgba(198,255,52,.18), transparent 35%), radial-gradient(circle at 85% 70%, rgba(130,213,229,.12), transparent 30%), radial-gradient(circle at 50% 100%, rgba(210,195,246,.10), transparent 40%), linear-gradient(180deg,#171717,#020202)"
+            "radial-gradient(circle at 15% 20%, rgba(198,255,52,.18), transparent 35%), radial-gradient(circle at 85% 70%, rgba(130,213,229,.12), transparent 30%), radial-gradient(circle at 50% 100%, rgba(210,195,246,.10), transparent 40%), linear-gradient(180deg,#171717,#020202)"
         }}
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
