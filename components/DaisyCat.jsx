@@ -1,7 +1,15 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import gsap from "gsap";
+
+const subscribe = () => () => {};
+const getSnapshot = () => true;
+const getServerSnapshot = () => false;
+
+function useIsMounted() {
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+}
 
 const CAT_IDLE = `
   /\\_/\\
@@ -51,7 +59,7 @@ const CAT_STATES = [
 ];
 
 export default function DaisyCat() {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useIsMounted();
   const [stateIndex, setStateIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [petCount, setPetCount] = useState(0);
@@ -64,11 +72,6 @@ export default function DaisyCat() {
   const currentState = isGodMode
     ? { ascii: CAT_GODMODE, mood: "⚡ GOD MODE ⚡", color: "text-lime animate-pulse" }
     : CAT_STATES[stateIndex];
-
-  // Portals need a real document, so only render after mount (client-side)
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     if (!mounted) return;

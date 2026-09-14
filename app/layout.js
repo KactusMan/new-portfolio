@@ -122,6 +122,8 @@ export const metadata = {
   },
 };
 
+import SmoothScroll from "@/components/SmoothScroll";
+
 export default function RootLayout({ children }) {
   return (
     <html
@@ -135,7 +137,9 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="font-body bg-onyx text-vanilla antialiased selection:bg-lime selection:text-onyx">
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
         <DaisyCat />
       </body>
     </html>

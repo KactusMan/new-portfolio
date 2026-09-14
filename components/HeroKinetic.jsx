@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
 import Link from "next/link";
-import { Coffee, Sparkles, ExternalLink, ArrowDownRight } from "lucide-react";
-
-const ASCII_EMOJIS = ["(⌐■_■)", "(° o °)", "(◔_◔)", "╦(ò_ó)╤", "(⚙_⚙)", "(⌐‿⌐)"];
+import { Coffee, Sparkles, ArrowDownRight } from "lucide-react";
+import MobileNav from "@/components/MobileNav";
 
 const RAYAN_IDREES_ASCII = `
 RRRR   AAA  Y   Y  AAA  N   N
@@ -21,8 +20,6 @@ IIIII DDDD  RRRR  EEEEE EEEEE SSSS
 IIIII DDDD  R  RR EEEEE EEEEE SSSS`;
 
 export default function HeroKinetic() {
-  const [asciiState, setAsciiState] = useState("(⌐■_■)");
-
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(".marquee-track", { xPercent: -50, repeat: -1, duration: 14, ease: "none" });
@@ -41,18 +38,16 @@ export default function HeroKinetic() {
       {/* Main Boxed Hero Container */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-12 md:pt-10 flex-1 flex flex-col justify-between">
         {/* Top Header Bar */}
-        <div className="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div className="relative z-10 flex justify-between items-center gap-4">
           <div className="flex items-center gap-3">
-            <button onClick={() => setAsciiState(ASCII_EMOJIS[Math.floor(Math.random() * ASCII_EMOJIS.length)])} className="font-mono text-lime text-lg md:text-2xl bg-cosmic border border-candyBlue px-3.5 py-1.5 rounded-xl transition-transform cursor-pointer shadow-[4px_4px_0px_#82D5E5] hover-glitch hover:scale-110 active:scale-95" title="Click to toggle ASCII mood!">
-              {asciiState}
-            </button>
             <div className="flex flex-col">
               <span className="text-xs uppercase tracking-widest text-vanilla font-mono font-bold">Rayan Idrees <span className="ml-1 text-candyBlue">a.k.a. kactusman</span></span>
               <span className="text-[10px] font-mono text-lavender/80">Senior CMS Architect & Frontend Specialist</span>
             </div>
           </div>
 
-          <div className="flex items-center gap-2.5 font-mono text-xs flex-wrap">
+          {/* Desktop Navigation Links */}
+          <div className="hidden sm:flex items-center gap-2.5 font-mono text-xs flex-wrap">
             <Link href="/projects" className="button-pop flex items-center gap-1.5 rounded-full border border-onyx bg-lime px-3.5 py-1.5 font-bold text-onyx shadow-[2px_2px_0px_#000] hover:bg-candyBlue transition-colors">
               <Sparkles className="w-3.5 h-3.5" /> PROJECTS <ArrowDownRight className="w-3.5 h-3.5" />
             </Link>
@@ -62,10 +57,13 @@ export default function HeroKinetic() {
             <Link href="/contact" className="border border-lavender/40 px-3.5 py-1.5 text-lavender rounded-full transition-colors hover:border-candyBlue hover:text-candyBlue">
               CONTACT
             </Link>
-            <span className="bg-tealGreen text-lightLime px-3 py-1.5 rounded-full border border-lightLime/20 hidden sm:flex items-center gap-1.5">
+            <span className="bg-tealGreen text-lightLime px-3 py-1.5 rounded-full border border-lightLime/20 flex items-center gap-1.5">
               <Coffee className="w-3.5 h-3.5 text-lime animate-bounce" /> 4+ YEARS EXPERT
             </span>
           </div>
+
+          {/* Animated Mobile Navigation Trigger */}
+          <MobileNav />
         </div>
 
         {/* Hero Grid Content */}
