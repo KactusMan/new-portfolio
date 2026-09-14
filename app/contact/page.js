@@ -1,7 +1,6 @@
-import Link from "next/link";
 import ContactSection from "@/components/ContactSection";
-import MobileNav from "@/components/MobileNav";
-import { ArrowLeft, Mail, Clock, ShieldCheck, HelpCircle } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import { Mail, Clock, ShieldCheck, HelpCircle } from "lucide-react";
 
 export const metadata = {
   title: "Contact Rayan Idrees | Hire Senior CMS Architect",
@@ -59,28 +58,7 @@ export default function ContactPage() {
       />
 
       {/* Navigation Header */}
-      <header className="border-b border-carbon bg-cosmic py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
-          <Link
-            href="/"
-            className="button-pop inline-flex items-center gap-2 font-mono text-xs font-bold text-onyx bg-lime px-4 py-2 rounded-xl border border-onyx hover:bg-candyBlue transition-all shadow-[4px_4px_0px_#020202]"
-          >
-            <ArrowLeft className="w-4 h-4" /> Return to Home
-          </Link>
-
-          <nav className="hidden sm:flex items-center gap-4 font-mono text-xs text-lavender">
-            <Link href="/projects" className="hover:text-lime transition-colors">
-              PROJECTS
-            </Link>
-            <span className="text-carbon">•</span>
-            <Link href="/about" className="hover:text-candyBlue transition-colors">
-              ABOUT
-            </Link>
-          </nav>
-
-          <MobileNav />
-        </div>
-      </header>
+      <Navbar />
 
       {/* Header Banner */}
       <section className="border-b border-carbon bg-cosmic py-12 md:py-20">
