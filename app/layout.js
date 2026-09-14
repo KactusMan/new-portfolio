@@ -129,6 +129,7 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable}`}
+      suppressHydrationWarning
     >
       <head>
         <script
@@ -136,7 +137,10 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-body bg-onyx text-vanilla antialiased selection:bg-lime selection:text-onyx">
+      <body
+        className="font-body bg-onyx text-vanilla antialiased selection:bg-lime selection:text-onyx"
+        suppressHydrationWarning
+      >
         <SmoothScroll>
           {children}
         </SmoothScroll>

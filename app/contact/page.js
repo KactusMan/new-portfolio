@@ -76,10 +76,6 @@ export default function ContactPage() {
             <Link href="/about" className="hover:text-candyBlue transition-colors">
               ABOUT
             </Link>
-            <span className="text-carbon">•</span>
-            <Link href="/playground" className="hover:text-lime transition-colors">
-              PLAYGROUND
-            </Link>
           </nav>
 
           <MobileNav />

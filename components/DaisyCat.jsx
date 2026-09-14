@@ -135,7 +135,7 @@ export default function DaisyCat() {
   const widget = !isOpen ? (
     <button
       onClick={() => setIsOpen(true)}
-      className={`fixed bottom-6 left-6 z-[9999] font-mono text-xs font-bold ${
+      className={`daisy-cat-widget fixed bottom-6 left-6 z-[9999] font-mono text-xs font-bold ${
         isGodMode ? "bg-lime text-onyx shadow-[0_0_15px_#c6ff34]" : "bg-blush text-onyx shadow-[4px_4px_0px_#000]"
       } px-3.5 py-2 rounded-xl border-2 border-onyx hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all cursor-pointer flex items-center gap-2`}
     >
@@ -144,7 +144,7 @@ export default function DaisyCat() {
   ) : (
     <div
       ref={catRef}
-      className="fixed bottom-6 left-6 z-[9999] select-none"
+      className="daisy-cat-widget fixed bottom-6 left-6 z-[9999] select-none"
     >
       {showConfetti && (
         <div className="absolute -top-16 left-0 right-0 text-center font-mono text-xs font-black text-lime animate-bounce bg-onyx px-3 py-1.5 rounded-full border border-lime shadow-[0_0_20px_#c6ff34]">

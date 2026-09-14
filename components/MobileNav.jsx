@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, ArrowDownRight, Coffee, Send, FileText, Code2, Home, User, Mail, FolderGit2 } from "lucide-react";
+import { ArrowDownRight, Coffee, Send, Home, User, Mail, FolderGit2 } from "lucide-react";
 
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,15 +16,18 @@ export default function MobileNav() {
     setIsOpen(false);
   }
 
-  // Prevent scroll when mobile menu is open
+  // Prevent scroll & hide floating widgets when mobile menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      document.body.classList.add("mobile-nav-open");
     } else {
       document.body.style.overflow = "";
+      document.body.classList.remove("mobile-nav-open");
     }
     return () => {
       document.body.style.overflow = "";
+      document.body.classList.remove("mobile-nav-open");
     };
   }, [isOpen]);
 
@@ -33,7 +36,6 @@ export default function MobileNav() {
     { name: "Projects", href: "/projects", icon: FolderGit2 },
     { name: "About", href: "/about", icon: User },
     { name: "Contact", href: "/contact", icon: Mail },
-    { name: "Playground", href: "/playground", icon: Code2 },
   ];
 
   return (

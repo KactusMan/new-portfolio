@@ -58,10 +58,6 @@ export default function ProjectsPage() {
             <Link href="/contact" className="hover:text-candyBlue transition-colors">
               CONTACT
             </Link>
-            <span className="text-carbon">•</span>
-            <Link href="/playground" className="hover:text-lime transition-colors">
-              PLAYGROUND
-            </Link>
           </nav>
 
           <MobileNav />

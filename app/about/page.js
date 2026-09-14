@@ -63,8 +63,8 @@ export default function AboutPage() {
               CONTACT
             </Link>
             <span className="text-carbon">•</span>
-            <Link href="/playground" className="hover:text-lime transition-colors">
-              PLAYGROUND
+            <Link href="/projects" className="hover:text-lime transition-colors">
+              Projects
             </Link>
           </nav>
 
