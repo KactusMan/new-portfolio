@@ -98,7 +98,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/rayan-idrees-social-card-v2.png",
         width: 1200,
         height: 630,
         alt: "Rayan Idrees — Senior CMS Architect and Frontend Specialist",
@@ -111,7 +111,7 @@ export const metadata = {
     description:
       "Bespoke CMS builds, headless Shopify storefronts, custom WordPress engines, and Next.js web applications.",
     creator: "@kactusman",
-    images: ["/twitter-image"],
+    images: ["/rayan-idrees-social-card-v2.png"],
   },
   robots: {
     index: true,
@@ -141,6 +141,10 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <head>
+        <meta
+          property="og:image:secure_url"
+          content="https://rayan-idrees.vercel.app/rayan-idrees-social-card-v2.png"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
