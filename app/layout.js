@@ -1,4 +1,5 @@
 import { Bebas_Neue, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import DaisyCat from "@/components/DaisyCat";
 import "./globals.css";
 
@@ -154,6 +155,7 @@ export default function RootLayout({ children }) {
           {children}
         </SmoothScroll>
         <DaisyCat />
+        <SpeedInsights />
       </body>
     </html>
   );
