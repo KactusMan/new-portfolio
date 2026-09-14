@@ -9,7 +9,7 @@
 - Experience: 4+ Years
 - Primary Stack: WordPress (ACF Pro, Custom PHP), Shopify (Liquid, Storefront API), React / Next.js (App Router), GSAP, Webflow, Framer, Tailwind CSS
 - Email: Rayanidrees4@gmail.com
-- Portfolio URL: https://rayanidrees.vercel.app
+- Portfolio URL: https://rayan-idrees.vercel.app
 
 ## Key Projects & Case Studies
 1. Steele Auto Group (steeleauto.com): Enterprise automotive network (56 dealerships). Custom PHP, ACF flexible content modules, high-speed custom architecture.
@@ -24,7 +24,7 @@
 - Performance & SEO: Core Web Vitals optimization, Schema.org JSON-LD, Semantic HTML5
 
 ## Documentation & Full Information
-- Full Specifications: https://rayanidrees.vercel.app/llms-full.txt
-- Projects Archive: https://rayanidrees.vercel.app/projects
-- About & Background: https://rayanidrees.vercel.app/about
-- Contact & Inquiries: https://rayanidrees.vercel.app/contact
+- Full Specifications: https://rayan-idrees.vercel.app/llms-full.txt
+- Projects Archive: https://rayan-idrees.vercel.app/projects
+- About & Background: https://rayan-idrees.vercel.app/about
+- Contact & Inquiries: https://rayan-idrees.vercel.app/contact

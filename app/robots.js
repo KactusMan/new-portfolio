@@ -5,6 +5,7 @@ export default function robots() {
       allow: "/",
       disallow: [],
     },
-    sitemap: "https://rayanidrees.vercel.app/sitemap.xml",
+    sitemap: "https://rayan-idrees.vercel.app/sitemap.xml",
+    host: "https://rayan-idrees.vercel.app",
   };
 }

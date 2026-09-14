@@ -8,7 +8,7 @@ import { Terminal, Cpu, Coffee, CheckCircle2, ArrowUpRight, Sparkles, Code2 } fr
 export const metadata = {
   title: "About Rayan Idrees | Senior CMS Architect & Frontend Specialist",
   description:
-    "Learn about Rayan Idrees (kactusman) — Senior CMS Architect & Full-Stack Frontend Specialist with 4+ years of experience engineering custom WordPress, Shopify, and Next.js platforms.",
+    "Meet Rayan Idrees (kactusman), a Senior CMS Architect with 4+ years of experience building custom WordPress, Shopify, and Next.js platforms.",
   alternates: {
     canonical: "/about",
   },
@@ -16,8 +16,7 @@ export const metadata = {
     title: "About Rayan Idrees | Senior CMS Architect",
     description:
       "Senior CMS Architect & Full-Stack Frontend Specialist with 4+ years of experience engineering custom WordPress, Shopify, and Next.js platforms.",
-    url: "https://rayanidrees.vercel.app/about",
-    images: [{ url: "/rayan-idrees.png", width: 800, height: 800, alt: "Rayan Idrees - Senior CMS Architect" }],
+    url: "https://rayan-idrees.vercel.app/about",
   },
 };
 
@@ -26,11 +25,11 @@ const jsonLd = {
   "@type": "AboutPage",
   "name": "About Rayan Idrees",
   "description": "Background, technical experience, and platform expertise of Rayan Idrees.",
-  "url": "https://rayanidrees.vercel.app/about",
+  "url": "https://rayan-idrees.vercel.app/about",
   "mainEntity": {
     "@type": "Person",
     "name": "Rayan Idrees",
-    "image": "https://rayanidrees.vercel.app/rayan-idrees.png",
+    "image": "https://rayan-idrees.vercel.app/rayan-idrees-portrait.jpg",
     "jobTitle": "Senior CMS Architect & Frontend Specialist",
     "knowsAbout": ["WordPress", "Shopify", "React", "Next.js", "PHP", "Liquid", "GSAP"]
   }

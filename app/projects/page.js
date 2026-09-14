@@ -7,7 +7,7 @@ import { FolderGit2, ArrowUpRight } from "lucide-react";
 export const metadata = {
   title: "Featured Projects & Client Case Studies",
   description:
-    "Explore Rayan Idrees's engineering portfolio — enterprise WordPress architectures, liquid Shopify storefronts, Next.js web applications, and GSAP scroll experiences.",
+    "Explore Rayan Idrees’s WordPress, Shopify, Next.js, and GSAP work, including enterprise CMS architectures and polished storefronts.",
   alternates: {
     canonical: "/projects",
   },
@@ -15,7 +15,7 @@ export const metadata = {
     title: "Featured Projects & Client Case Studies | Rayan Idrees",
     description:
       "Enterprise WordPress architectures, liquid Shopify storefronts, Next.js web applications, and GSAP scroll experiences.",
-    url: "https://rayanidrees.vercel.app/projects",
+    url: "https://rayan-idrees.vercel.app/projects",
   },
 };
 
@@ -24,11 +24,11 @@ const jsonLd = {
   "@type": "CollectionPage",
   "name": "Featured Projects & Case Studies - Rayan Idrees",
   "description": "Selected CMS architectures, headless storefronts, and frontend builds by Rayan Idrees.",
-  "url": "https://rayanidrees.vercel.app/projects",
+  "url": "https://rayan-idrees.vercel.app/projects",
   "isPartOf": {
     "@type": "WebSite",
     "name": "Rayan Idrees Portfolio",
-    "url": "https://rayanidrees.vercel.app"
+    "url": "https://rayan-idrees.vercel.app"
   }
 };
 

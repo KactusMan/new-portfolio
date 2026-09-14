@@ -5,7 +5,7 @@ import { Mail, Clock, ShieldCheck, HelpCircle } from "lucide-react";
 export const metadata = {
   title: "Contact Rayan Idrees | Hire Senior CMS Architect",
   description:
-    "Get in touch with Rayan Idrees (kactusman) for custom WordPress development, Shopify storefront architecture, Next.js web applications, or full-stack CMS consultation.",
+    "Contact Rayan Idrees for custom WordPress development, Shopify storefront architecture, Next.js applications, or CMS consulting.",
   alternates: {
     canonical: "/contact",
   },
@@ -13,7 +13,7 @@ export const metadata = {
     title: "Contact Rayan Idrees | Senior CMS Architect",
     description:
       "Direct channel for project inquiries, custom CMS builds, Shopify storefront architecture, and Next.js contracts.",
-    url: "https://rayanidrees.vercel.app/contact",
+    url: "https://rayan-idrees.vercel.app/contact",
   },
 };
 
@@ -22,7 +22,7 @@ const jsonLd = {
   "@type": "ContactPage",
   "name": "Contact Rayan Idrees",
   "description": "Get in touch with Rayan Idrees for CMS architecture and frontend development project inquiries.",
-  "url": "https://rayanidrees.vercel.app/contact",
+  "url": "https://rayan-idrees.vercel.app/contact",
   "mainEntity": {
     "@type": "Person",
     "name": "Rayan Idrees",

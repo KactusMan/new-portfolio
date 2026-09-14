@@ -35,5 +35,5 @@ Rayan Idrees is a Senior CMS Architect and Frontend Specialist with over 4 years
 
 ## Contact Information
 - Email: Rayanidrees4@gmail.com
-- Main Site: https://rayanidrees.vercel.app
+- Main Site: https://rayan-idrees.vercel.app
 - GitHub/Alias: kactusman

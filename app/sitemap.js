@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://rayanidrees.vercel.app";
+  const baseUrl = "https://rayan-idrees.vercel.app";
 
   return [
     {
