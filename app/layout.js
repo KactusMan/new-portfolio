@@ -128,7 +128,10 @@ export const metadata = {
     },
   },
   icons: {
-    icon: "/icon.svg",
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
     shortcut: "/icon.svg",
     apple: "/icon.svg",
   },
@@ -144,6 +147,9 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <head>
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="/icon.svg" />
+        <link rel="apple-touch-icon" href="/icon.svg" />
         <meta
           property="og:image:secure_url"
           content="https://rayan-idrees.vercel.app/rayan-idrees-social-card-v2.png"

@@ -33,14 +33,14 @@ export default function HeroKinetic() {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] bg-cosmic text-vanilla overflow-hidden flex flex-col justify-between border-b border-carbon">
+    <section className="relative bg-cosmic text-vanilla overflow-hidden flex flex-col border-b border-carbon">
       <Navbar />
 
       {/* Main Boxed Hero Container */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-12 md:pt-10 flex-1 flex flex-col justify-between">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-8 md:pt-8 md:pb-12 flex flex-col">
 
         {/* Hero Grid Content */}
-        <div className="relative z-10 my-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_440px] lg:items-start lg:gap-12">
+        <div className="relative z-10 my-4 md:my-6 grid gap-8 lg:grid-cols-[minmax(0,1fr)_440px] lg:items-start lg:gap-12">
           <div className="flex-1 max-w-3xl">
             <h1 className="text-5xl sm:text-7xl md:text-9xl font-display font-black uppercase tracking-tight leading-none text-vanilla">
               <span className="hero-line block">SENIOR</span>
