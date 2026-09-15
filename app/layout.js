@@ -161,9 +161,9 @@ export default function RootLayout({ children }) {
         <DaisyCat />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-M8D0THYY51"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="beforeInteractive">
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
