@@ -1,4 +1,5 @@
 import { Bebas_Neue, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import DaisyCat from "@/components/DaisyCat";
 import "./globals.css";
 
@@ -158,6 +159,16 @@ export default function RootLayout({ children }) {
           {children}
         </SmoothScroll>
         <DaisyCat />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-M8D0THYY51"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-M8D0THYY51');`}
+        </Script>
       </body>
     </html>
   );
